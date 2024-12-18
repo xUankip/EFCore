@@ -1,0 +1,22 @@
+@model List<EFCoreLazyLoadingApp.Models.Order>
+
+<h1>Danh sách đơn hàng</h1>
+<table border="1" style="width: 100%; border-collapse: collapse;">
+    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>Tên User</th>
+        <th>Ngày đặt hàng</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model)
+    {
+    <tr>
+        <td>@order.Id</td>
+        <td>@order.User.Name</td>
+        <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+    </tr>
+    }
+    </tbody>
+</table>
